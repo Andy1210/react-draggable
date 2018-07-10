@@ -1389,6 +1389,15 @@ var Draggable = function (_React$Component) {
         uiData.deltaX = newState.x - _this.state.x;
         uiData.deltaY = newState.y - _this.state.y;
       }
+	var controlled = Boolean(_this.props.position);
+      	if (controlled) {
+        var _this$props$position = _this.props.position,
+            _x2 = _this$props$position.x,
+            _y2 = _this$props$position.y;
+
+            newState.x = _x2;
+            newState.y = _y2;
+      	}
 
       // Short-circuit if user's callback killed it.
       var shouldUpdate = _this.props.onDrag(e, uiData);
